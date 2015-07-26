@@ -1,28 +1,32 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+KnowMe is a rapport building app geared towards creating a community audience
+such as a team or a group of people. The app is primarily designed for users to
+build rapport with one another by revealing a desired personal detail about them
+for others to see. Users can comment anonymous or be logged in reveal their
+name. Theoretically, revealing personal details to each other will build a
+strong bonding experience. Currently the KnowMe platform is in beta and will
+have only its main functional idea.
 
-Things you may want to cover:
+Users will be able to:
+* sign up and Login with name and password
 
-* Ruby version
+* create POSTS.
 
-* System dependencies
+* COMMENT on created posts by other Users.
 
-* Configuration
+* DELETE their own POST and COMMENT
 
-* Database creation
+* Be Anonymous or have a session login associated with the comments they leave.
 
-* Database initialization
+#### Possible Future Developments:
 
-* How to run the test suite
+* Group feature - posts will only be accesible by users assigned to certain groups
 
-* Services (job queues, cache servers, search engines, etc.)
+* Giphy feature - add some giphy to those bad boys.
 
-* Deployment instructions
-
-* ...
+* Photo feature - add photos functionality.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+#### Look in wireframe folder for the blueprint of KnowMe.
