@@ -1,4 +1,4 @@
-== README
+## KnowMe
 
 KnowMe is a rapport building app geared towards creating a community audience
 such as a team or a group of people. The app is primarily designed for users to
@@ -19,7 +19,7 @@ Users will be able to:
 
 * Be Anonymous or have a session login associated with the comments they leave.
 
-#### Possible Future Developments:
+### Possible Future Developments:
 
 * Group feature - posts will only be accesible by users assigned to certain groups
 
@@ -27,6 +27,11 @@ Users will be able to:
 
 * Photo feature - add photos functionality.
 
-
-
-#### Look in wireframe folder for the blueprint of KnowMe.
+-------------------------------------------------
+##### WIREFRAMES
+| ERD                                     | SIGNUP                                 |
+| --------------------------------------- |:--------------------------------------:| 
+| ![erd_knowmev3](http://gph.to/1I5OhU4)  | ![knowme_signup](http://gph.to/1SKik8I)| 
+|                                         |                                        |   
+| LOGIN                                   | POSTS                                  |  
+| ![knowme_login](http://gph.to/1Io5reY)  | ![knowme_posts](http://gph.to/1MvZdAC) |
