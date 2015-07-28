@@ -5,8 +5,20 @@
     <br><small><%= @post.body %></small>
   </h1>
 </div>
-
-
+<ul class="list-group">
+  <li class="list-group-item">
+    <% @post.comments.each do |c| %>
+    <span class="badge">
+      <%if c.user %>
+        Created by: <%= c.user.name %>
+        <%else%>
+        Created by: Anonymous
+      <%end%>
+    </span>
+    <p><%= c.body %></p>
+   <% end %>
+  </li>
+</ul>
 
 
 
