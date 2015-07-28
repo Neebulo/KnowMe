@@ -7,6 +7,7 @@ root "posts#index"
 resources :posts, except: [:edit, :update, :destroy] do
   resources :comments, only: :create
 end
+resources :users, only: [:new, :create, :index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
