@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
+  get 'users/create'
+
 root "posts#index"
 resources :posts, except: [:edit, :update, :destroy] do
   resources :comments, only: :create
