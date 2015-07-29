@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'users/create'
 
 root 'sessions#new'
+get '/logout' => 'sessions#destroy'
 resources :posts, except: [:edit, :update, :destroy] do
   resources :comments, only: :create
 end

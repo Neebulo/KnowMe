@@ -7,16 +7,17 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(user_params[:password])
       session[:user_id] = @user.id
-      redirect_to posts_index_path
+      redirect_to posts_index_path, notice: "logged in!"
     else
-      redirect_to new_session_path  #render 'new' <<try this out
+      flash.now.alert = "invalid login credentials"
+      render 'new'  # prior was redirect_to new_session_path
     end
 
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path
+    redirect_to root_path, notice: "logged out"
   end
 
   private

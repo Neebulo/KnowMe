@@ -26,6 +26,27 @@
 <div class="container">
   <footer>
     <p>&copy; KnowMe 2015</p>
+    <!-- ****code for current_user login/logout*** -->
+  <% if current_user %>
+    <% flash.each do |name, message| %>
+    <div class="flash-message flash-message-<%= name %>">
+      <div class="alert alert-success" role="alert">
+        <%= message %>
+        <p>Hello, <%= current_user.email %></p>
+        <%= link_to 'Logout', session_path(session), method: :delete%>
+      </div>
+    </div>
+    <% end %> <!-- end for flash.each -->
+  <%else%>
+    <%= link_to "Please Login", new_session_path, class: "btn btn-default" %>
+    <% flash.each do |name, message| %>
+      <div class="flash-message flash-message-<%= name %>">
+        <div class="alert alert-danger" role="alert">
+          <%= message %>
+        </div>
+    <% end %> <!-- end for flash.each -->
+    </div>
+  <% end %> <!-- end for current_user -->
   </footer>
 </div>
 
