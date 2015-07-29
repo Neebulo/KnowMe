@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(user_params[:password])
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to posts_index_path
     else
       redirect_to new_session_path  #render 'new' <<try this out
     end
