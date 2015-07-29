@@ -1,6 +1,14 @@
+<br>
+<br>
 <h1>LOG IN HERE</h1>
 <%= form_for User.new, url: sessions_path do |f| %>
 Email: <%= f.text_field :email %>
 Password: <%= f.password_field :password %>
 <%= f.submit "Login" %>
 <%end%>
+
+
+<%= link_to("Or sign up",  users_new_path)%>
+<span>
+  <%= link_to("Or be a lurker",  posts_index_path)%>
+</span>

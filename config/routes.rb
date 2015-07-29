@@ -5,14 +5,16 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
 
-  get 'users/new'
+  get 'users/new' => 'users#new', as: :users_new
+
 
   get 'users/create'
 
-root "posts#index"
+root 'sessions#new'
 resources :posts, except: [:edit, :update, :destroy] do
   resources :comments, only: :create
 end
+get 'posts/' => 'posts#index', as: :posts_index
 resources :users, only: [:new, :create, :index]
 resources :sessions, only: [:new, :create, :destroy]
 
