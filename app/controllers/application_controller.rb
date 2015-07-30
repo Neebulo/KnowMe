@@ -10,4 +10,10 @@ class ApplicationController < ActionController::Base
   def logged_in?
    !!current_user
   end
-end
+  def authorize
+    unless logged_in?
+      flash[:error] = "You must be logged in to access this section"
+      redirect_to new_session_path
+    end #end for unless
+  end # end for authorize
+end # end for class

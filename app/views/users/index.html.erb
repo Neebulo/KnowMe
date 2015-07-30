@@ -4,4 +4,7 @@
 <p>Find me in app/views/users/index.html.erb</p>
 <% @user.each do |u| %>
   <p><%= u.name %><p>
+
+<%= link_to "this user", edit_user_path(u) %>
+
 <%end%>

@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
 
   get 'users/new' => 'users#new', as: :users_new
 
+  get 'users/:id/edit' => 'users#edit', as: :edit_user
+  patch 'users/:id' => 'users#update'
+  delete 'users/:id' => 'users#destroy'
 
   get 'users/create'
 
@@ -16,7 +14,7 @@ resources :posts, except: [:edit, :update, :destroy] do
   resources :comments, only: :create
 end
 get 'posts/' => 'posts#index', as: :posts_index
-resources :users, only: [:new, :create, :index]
+resources :users, only: [:new, :create, :index, :edit, :update]
 resources :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
