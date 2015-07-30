@@ -2,9 +2,9 @@
 <br>
 <h1>LOG IN HERE</h1>
 <%= form_for User.new, url: sessions_path do |f| %>
-Email: <%= f.text_field :email %>
-Password: <%= f.password_field :password %>
-<%= f.submit "Login" %>
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  <%= f.submit "Login" %>
 <%end%>
 
 

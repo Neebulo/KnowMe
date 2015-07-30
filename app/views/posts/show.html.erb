@@ -8,15 +8,15 @@
 <ul class="list-group">
   <li class="list-group-item">
     <% @post.comments.each do |c| %>
-    <span class="badge">
-      <%if c.user %>
-        Created by: <%= c.user.name %>
+      <span class="badge">
+        <%if c.user %>
+          Created by: <%= c.user.name %>
         <%else%>
-        Created by: Anonymous
-      <%end%>
-    </span>
-    <p><%= c.body %></p>
-   <% end %>
+          Created by: Anonymous
+        <%end%>   <!-- end for if -->
+      </span>
+      <p><%= c.body %></p>
+    <% end %> <!-- end for @post.comments.each -->
   </li>
 </ul>
 
@@ -28,5 +28,4 @@
    <% end %>
  </div>
  <%= link_to(" Back to the list of posts",  posts_path)%>
-
  <br>

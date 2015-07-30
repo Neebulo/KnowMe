@@ -6,9 +6,8 @@
   EMAIL: <%= a.text_field :email %>
   PASSWORD: <%= a.text_field :password %>
   PASSWORD CONFIRM: <%= a.text_field :password_confirmation %>
-
   <%= a.submit 'EDIT THIS USER' %>
-  <% end %>
-  <%= link_to 'Delete this USER!', :user, method: :delete, data: {confirm: "Are you sure you want to remove this user?"} %>
+<% end %>
 
-  <%= link_to("Back to the list of users",  users_path)%>
+<%= link_to 'Delete this USER!', :user, method: :delete, data: {confirm: "Are you sure you want to remove this user?"} %>
+<%= link_to("Back to the list of users",  users_path)%>
