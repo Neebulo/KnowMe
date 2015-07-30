@@ -4,9 +4,7 @@
 <%= form_for @post do |a| %>
   TITLE: <%= a.text_field :title %>
   BODY: <%= a.text_area :body %>
-
   <%= a.submit 'EDIT THIS POST' %>
   <% end %>
   <%= link_to 'Delete this POST!', :post, method: :delete, data: {confirm: "Are you sure you want to remove this user?"} %>
-
   <%= link_to("Back to the list of posts",  posts_path)%>

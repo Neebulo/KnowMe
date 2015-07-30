@@ -3,20 +3,16 @@
 <h1>Posts#index</h1>
 <p>Find me in app/views/posts/index.html.erb</p>
 
-  <div class="container">
+<div class="container">
     <!-- Example row of columns -->
-    <div class="row">
-<% @posts.each do |x| %>
-      <div class="col-md-4">
-
-
-
-        <h2><%= link_to "#{x.title}", post_path(x) %></h2>
-        <p><%= x.body %></p>
-        <p class="btn btn-default"><%= link_to "view me", post_path(x) %></p>
-
-      </div>
-<% end %>
+  <div class="row">
+    <% @posts.each do |x| %>
+    <div class="col-md-4">
+      <h2><%= link_to "#{x.title}", post_path(x) %></h2>
+      <p><%= x.body %></p>
+      <p class="btn btn-default"><%= link_to "view me", post_path(x) %></p>
     </div>
-
-    <hr>
+    <% end %>
+  </div>
+</div>
+  <hr>

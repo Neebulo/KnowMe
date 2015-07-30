@@ -20,16 +20,13 @@
   </li>
 </ul>
 
-
-
-
  <div>
    <%= form_for [@post, Comment.new] do |f| %>
-   <%= f.label :body, "New Comment" %>
-   <%= f.text_area :body %>
-   <%= f.submit "Submit Comment" %>
-   <%= link_to(" Back to the list of posts",  posts_path)%>
-
+     <%= f.label :body, "New Comment" %>
+     <%= f.text_area :body %>
+     <%= f.submit "Submit Comment" %>
    <% end %>
  </div>
+ <%= link_to(" Back to the list of posts",  posts_path)%>
+
  <br>
