@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 root 'sessions#new'
 get '/logout' => 'sessions#destroy'
 resources :posts, only: [:new, :create, :edit, :update, :destroy, :show] do
-  resources :comments, only: :create
+  resources :comments, only: [:create, :new, :edit, :update, :destroy]
 end
 get 'posts/' => 'posts#index', as: :posts_index
 
