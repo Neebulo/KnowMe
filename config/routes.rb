@@ -10,10 +10,14 @@ Rails.application.routes.draw do
 
 root 'sessions#new'
 get '/logout' => 'sessions#destroy'
-resources :posts, except: [:edit, :update, :destroy] do
+resources :posts, only: [:new, :create, :edit, :update, :destroy, :show] do
   resources :comments, only: :create
 end
 get 'posts/' => 'posts#index', as: :posts_index
+
+
+patch 'posts/:id' => 'posts#update'
+delete 'posts/:id' => 'posts#destroy'
 resources :users, only: [:new, :create, :index, :edit, :update]
 resources :sessions, only: [:new, :create, :destroy]
 
