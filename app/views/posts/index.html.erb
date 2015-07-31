@@ -1,5 +1,4 @@
-<br>
-<br>
+render <%= 'break_top' %>
 <h1>Posts#index</h1>
 <p>Find me in app/views/posts/index.html.erb</p>
 
@@ -15,4 +14,10 @@
     <% end %>
   </div>
 </div>
+<%= link_to(" Create New Post",  post_new_path)%>
   <hr>
+  <% if current_user %>
+    <p>Hello, <%= current_user.email %></p>
+    <%= link_to 'Logout', session_path(session), method: :delete%>
+  <%else%>
+  <%end%> <!-- end for if -->

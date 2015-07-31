@@ -1,25 +1,40 @@
 Rails.application.routes.draw do
 
+  root 'sessions#new'
+  get '/logout' => 'sessions#destroy'
+  get 'posts/' => 'posts#index', as: :posts_index
+  get 'posts/new' => 'posts#new', as: :post_new
+
+  # nested comments resources
+  resources :posts do
+    resources :comments
+  end
+
   get 'users/new' => 'users#new', as: :users_new
-
-  get 'users/:id/edit' => 'users#edit', as: :edit_user
-  patch 'users/:id' => 'users#update'
-  delete 'users/:id' => 'users#destroy'
-
-  get 'users/create'
-
-root 'sessions#new'
-get '/logout' => 'sessions#destroy'
-resources :posts, only: [:new, :create, :edit, :update, :destroy, :show] do
-  resources :comments, only: [:create, :new, :edit, :update, :destroy]
-end
-get 'posts/' => 'posts#index', as: :posts_index
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
 
-patch 'posts/:id' => 'posts#update'
-delete 'posts/:id' => 'posts#destroy'
-resources :users, only: [:new, :create, :index, :edit, :update]
-resources :sessions, only: [:new, :create, :destroy]
+  # get 'users/create'
+  # get 'users/:id/edit' => 'users#edit', as: :edit_user
+  # patch 'users/:id' => 'users#update'
+  # delete 'users/:id' => 'users#destroy'
+
+  # (alternate style for resources users/sessions with restrictions)
+  # resources :users, only: [:new, :create, :index, :edit, :update]
+  # resources :sessions, only: [:new, :create, :destroy]
+
+  # (alternate style for nested comments )
+  # resources :posts, only: [:new, :create, :edit, :update, :destroy, :show] do
+  # resources :comments, only: [:create, :new, :edit, :update, :destroy]
+  # end
+  # *** end alternate style ****
+
+  # POSTS group to destroy edit update
+  # get 'posts/:id/edit' => 'posts#edit', as: :edit_post
+  # patch 'posts/:id' => 'posts#update'
+  # delete 'posts/:id' => 'posts#destroy'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

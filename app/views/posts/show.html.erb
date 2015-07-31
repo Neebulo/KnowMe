@@ -1,7 +1,9 @@
 <h1>Posts#show</h1>
 <p>Find me in app/views/posts/show.html.erb</p>
 <div class="page-header">
-  <h1><%= @post.title %><br>
+  <h1><%= @post.title %>
+    <%= link_to("Edit this post",  edit_post_path)%>
+    <br>
     <br><small><%= @post.body %></small>
   </h1>
 </div>
@@ -16,7 +18,8 @@
         <%end%>   <!-- end for if -->
       </span>
       <p><%= c.body %></p>
-  <%= link_to 'Delete this comment!', [@post,c], method: :delete, data: {confirm: "Are you sure you want to remove this user?"} %>
+  <%= link_to 'Delete this comment!', [@post,c], method: :delete, data: {confirm: "Are you sure you want to remove this comment?"} %>
+
     <% end %> <!-- end for @post.comments.each -->
   </li>
 </ul>

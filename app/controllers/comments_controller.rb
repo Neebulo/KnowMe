@@ -14,7 +14,23 @@ class CommentsController < ApplicationController
     redirect_to post_path(@post)
   end
 
-
+  def edit
+      @post = Post.find(params[:post_id])
+      @comment = Comment.find.edit(comment_params)
+      @comment.edit = current_user
+      @comment.save
+      redirect_to post_path(@post)
+    end
+    def update
+      @post = Post.find(params[:post_id])
+      @comment = @post.comments.update(comment_params)
+      @comment.user = current_user
+      if @comment.update_attributes(params.require(:comment).permit(:body))
+        redirect_to post_path(@post)
+      else
+        render "edit"
+      end #end for if
+    end# end for update
 
   private
     def comment_params
