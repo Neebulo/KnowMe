@@ -2,7 +2,7 @@
 <p>Find me in app/views/posts/show.html.erb</p>
 <div class="page-header">
   <h1><%= @post.title %>
-    <%= link_to("Edit this post",  edit_post_path)%>
+    <%= link_to("Edit this post", edit_post_path)%>
     <br>
     <br><small><%= @post.body %></small>
   </h1>
@@ -31,5 +31,5 @@
      <%= f.submit "Submit Comment" %>
    <% end %>
  </div>
- <%= link_to(" Back to the list of posts",  posts_path)%>
+ <%= link_to(" Back to the list of posts", posts_path)%>
  <br>
