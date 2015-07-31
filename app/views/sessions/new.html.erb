@@ -1,13 +1,16 @@
 render <%= 'break_top' %>
-<h1>LOG IN HERE</h1>
-<%= form_for User.new, url: sessions_path do |f| %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  <%= f.submit "Login" %>
-<%end%>
+<div class="page-header">
+  <h1>LOG IN HERE</h1>
+</div>
+<div class="form-group col-md-4">
 
+  <%= form_for User.new, url: sessions_path do |f| %>
+    Email: <%= f.text_field :email, class:'form-control' %>
+    Password: <%= f.password_field :password, class:'form-control'%>
+    <%= f.submit "Login", class:'btn btn-default submit-btn' %>
+  <%end%>
+</div>
 
-<%= link_to("Or sign up", users_new_path)%>
-<span>
-  <%= link_to("Or be a lurker", posts_index_path)%>
-</span>
+<div class="btn btn-default"><%= link_to("Sign up", users_new_path)%></div>
+<div class="btn btn-default"><span><%= link_to("Be A Lurker", posts_index_path)%></span></div>
+ 

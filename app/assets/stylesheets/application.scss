@@ -16,3 +16,24 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body{
+  background: url(asset-path('geometry.png'));
+  background-repeat: repeat;
+}
+
+.login-btn {
+  margin-top: 8px;
+}
+
+.submit-btn {
+  margin-top: 10px;
+}
+
+footer {
+  height: 200px;
+  background: #272727;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
