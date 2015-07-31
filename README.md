@@ -8,6 +8,7 @@ name. Theoretically, revealing personal details to each other will build a
 strong bonding experience. Currently the KnowMe platform is in beta and will
 have only its main functional idea.
 
+### User Stories
 Users will be able to:
 * sign up and Login with name and password
 
@@ -27,11 +28,22 @@ Users will be able to:
 
 * Photo feature - add photos functionality.
 
+### Technologies used:
+
+* Ruby on Rails
+* Bootstrap
+
+### Issues
+
+* All users have universal permissions to edit delete update comments posts users
+* comment does not have edit option
+* Web design is minimum
+* Has minimum viable product
 -------------------------------------------------
 ##### WIREFRAMES
 | ERD                                     | SIGNUP                                 |
-| --------------------------------------- |:--------------------------------------:| 
-| ![erd_knowmev3](http://gph.to/1I5OhU4)  | ![knowme_signup](http://gph.to/1SKik8I)| 
-|                                         |                                        |   
+| --------------------------------------- |:--------------------------------------:|
+| ![erd_knowmev3](http://gph.to/1I5OhU4)  | ![knowme_signup](http://gph.to/1SKik8I)|
+|                                         |                                        |
 | LOGIN                                   | POSTS                                  |  
 | ![knowme_login](http://gph.to/1Io5reY)  | ![knowme_posts](http://gph.to/1MvZdAC) |
